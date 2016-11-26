@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>menu</title>
+	<style type="text/css">
+		body,ul,li{
+			margin:0;
+			padding:0;
+		}
+		a:link{
+			text-decoration: none;
+		}
+		#lbj{
+			list-style-type: none;
+			background-color: pink;
+            overflow: hidden;
+            width:500px;
+            margin:10px;
+
+
+            /*因为子元素浮动，所以相当于没有文档流，*/
+            /*所以此时是不会显示背景颜色的*/
+		}
+		#lbj>li{
+			float: left;
+			width:100px;
+			/*display:inline;*/
+			
+
+		}
+		#lbj>li>a{
+			border-top:1px solid black;
+			border-right: 1px solid black;
+			border-bottom:1px solid black;
+			display: block;
+			padding:10px 20px;
+			
+
+		}
+		#lbj>li:first-child>a{
+			border-left: 1px solid black;
+
+		}
+		
+	    #lbj li ul{
+        position: absolute;
+        left: -999em;
+        background-color: gray;
+        list-style-type: none;
+        text-align: center;
+        /*border-left :1px solid black;
+        border-right:1px solid black;*/
+	    }
+	    #lbj>li>ul>li{
+        border-left :1px solid black;
+        border-right:1px solid black;
+	    }
+	    #lbj ul a{
+	    	width:98px;
+	    	display: block;
+	    	border-bottom: 1px solid black;
+	    	/*height: 40px;*/
+	        line-height:2em;
+	    	/*border-left: 1px solid black;
+	    	border-right: 1px solid black;
+	    	在没有设置height的情况下，lineheight设置用em就能垂直居中，但是当heigth设置了px的情况下，lineheight就要和height设置成一样的px*/
+
+	    }
+	    #lbj>li>a:hover+ul{
+	    	left:auto;
+	    }
+
+	</style>
+</head>
+<body>
+	<ul id="lbj">
+		<li><a href="###">小贱贱</a></li>
+		<li><a href="###">小尖尖</a></li>
+		<li><a href="###">小见见</a></li>
+		<li><a href="###">小渐渐</a></li>
+		<li>
+			<a href="###">小减减</a>
+			<ul>
+				<li><a href="###">小弟弟</a></li>
+				<li><a href="###">小妹妹</a></li>
+			</ul>
+		</li>
+	</ul>
+
+</body>
+</html>
